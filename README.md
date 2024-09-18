@@ -9,26 +9,27 @@ This project aims to develop and evaluate an anomaly detection system for time s
 
 #### Data Preprocessing and Visualization:
 
-Load and preprocess the ETTh2 dataset to extract relevant features, namely MUFL (Machine Utilization and Failure Level) and LULL (Load Usage Level).
-Visualize the data to understand its structure and distribution, including training and validation subsets.
+Extracts relevant features from the ETTh2 dataset, specifically MUFL (Machine Utilization and Failure Level) and LULL (Load Usage Level). Visualizes the data to understand its structure and distribution, including training and validation subsets.
 
 #### Anomaly Detection using KMeans Scorer:
 
-Implement the KMeans Scorer from the Darts library to detect anomalies. This method uses KMeans clustering to identify deviations from normal patterns in the time series data.
-Train the KMeans Scorer on the training subset and compute anomaly scores for the validation subset.
+The KMeans Scorer, from the Darts library, uses KMeans clustering to identify deviations from normal patterns in time series data. It clusters the data into k clusters and computes an anomaly score based on the distance of data points from the cluster centroids.
+
+This method effectively identifies outliers by measuring how far data points deviate from normal clusters. It is well-suited for time series data where patterns and deviations are significant indicators of anomalies.
 
 #### Quantile-Based Anomaly Detection:
 
-Apply the Quantile Detector to convert the computed anomaly scores into binary anomaly flags. The detector uses quantile thresholds to distinguish between normal and anomalous data points.
-Fine-tune the quantile threshold to optimize the detection performance.
+The Quantile Detector converts computed anomaly scores into binary anomaly flags using quantile thresholds. It determines the threshold for anomalies based on the distribution of the scores.
+
+By adjusting the quantile threshold, the detector can adapt to different levels of sensitivity. This allows for fine-tuning the detection system to balance between false positives and missed anomalies.
 
 #### Visualization of Results:
 
-Plot the original time series data alongside the computed anomaly scores and detected anomalies. Use visualizations to highlight periods of anomalous behavior and validate the effectiveness of the detection methods.
+Displays the original time series data, computed anomaly scores, and detected anomalies. Uses visualizations to highlight periods of anomalous behavior and validate the effectiveness of the detection methods.
 
 #### Evaluation:
 
-Assess the performance of the anomaly detection methods by analyzing the detected anomalies and comparing them with known anomalies, if available. Adjust parameters and thresholds to improve detection accuracy.
+Assesses the performance of the anomaly detection methods by analyzing the detected anomalies and comparing them with known anomalies, if available. Adjusts parameters and thresholds to improve detection accuracy.
 
 #### Tools and Libraries:
 
